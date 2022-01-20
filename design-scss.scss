@@ -1,0 +1,982 @@
+@import 'variables';
+@import 'mixins';
+@import 'responsive-mixin';
+
+body{
+    margin: 0;
+}
+
+div{
+    box-sizing: border-box;
+    h2,h3,h4{
+        font-family: $heading-style;
+    }
+    h2{
+        font-size: 170px;
+        @include galaxyfold{
+            font-size: 35px;
+        }
+        @include verysmallscreen{
+            font-size: 45px;
+        }
+        @include mobile{
+            font-size: 50px;
+        }
+        @include ipad{
+            font-size: 110px;
+        }
+        @include midscreen{
+            font-size: 70px;
+        }
+        @include mediumscreen{
+            font-size: 95px;
+        }
+        @include tab{
+            font-size: 122px;
+        }
+    }
+    h3{
+        font-size: 50px;
+        @include galaxyfold{
+            font-size: 11px;
+        }
+        @include verysmallscreen{
+            font-size:15px;
+        }
+        @include mobile{
+            font-size:20px;
+        }
+        @include ipad{
+            font-size: 38px;
+        }
+        @include midscreen{
+            font-size: 22px;
+        }
+        @include mediumscreen{
+            font-size: 32px;
+        }
+        @include tab{
+            font-size: 45px;
+        }
+    }
+    p{
+        font-family: $info-style;
+    }
+}
+
+.box{
+    background-color: black;
+    width: 100%;
+}
+
+.body1{
+    background-image: radial-gradient(ellipse at top,$bg_yellow 0%,$bg_black 30%);
+    @include body-design;
+    height: $height;
+    padding-bottom: 100px;
+    @include galaxyfold{
+        padding-bottom: 70px;
+    }
+    @include mobile{
+        padding-bottom: 70px;
+    }
+    @include verysmallscreen{
+        padding-bottom: 80px;
+    }
+    @include midscreen{
+        padding-bottom: 70px;
+    }
+    @include ipad{
+        padding-bottom: 120px;
+    }
+    .flower{
+        position: absolute;
+        top: 13%;
+        right: 0;
+        text-align: center;
+        @include galaxyfold{
+            right: -52%;
+        }
+        @include verysmallscreen{
+            right: -35%;
+        }
+        @include mobile{
+            right: -35%;
+        }
+        @include ipad{
+            right: -12%;
+        }
+        @include mediumscreen{
+            right: -12%;
+        }
+        @include tab{
+            right: -10%;
+        }
+        @include midscreen{
+            right: -25%;
+        }
+        &-img{
+            position: relative;
+            width: 40%;
+            @include galaxyfold{
+                width: 10%;
+            }
+            @include verysmallscreen{
+                width: 20%;
+            }
+            @include mobile{
+                width: 12%;
+            }
+            @include ipad{
+                width: 30%;
+            }
+            @include mediumscreen{
+                width: 30%;
+            }
+            @include tab{
+                width: 30%;
+            }
+            @include midscreen{
+                width: 20%;
+            }
+        }
+        .text01{
+            color: $bg_grey;
+            font-size: 40px;
+            @include absolute-mid;
+            @include galaxyfold{
+                font-size: 10px;
+            }
+            @include verysmallscreen{
+                font-size: 20px;
+            }
+            @include mobile{
+                font-size: 12px;
+            }
+            @include ipad{
+                font-size: 30px;
+            }
+            @include mediumscreen{
+                font-size: 30px;
+            }
+            @include tab{
+                font-size: 30px;
+            }
+            @include midscreen{
+                font-size: 20px;
+            }
+        }
+    }
+    
+    .content{
+        position: relative;
+        width: $width;
+        height: auto;
+        z-index: 1;
+        @include clearfix;
+        h2{
+            margin: 0;
+            color: $bg_yellow;  
+        } 
+        .color-fill{
+            padding-top: 15%;
+            @include clearfix;
+        }
+        .stroke-nofill{
+            position: absolute;
+            top: 0;
+            @extend .color-fill;
+            h2{
+                color: transparent;
+               -webkit-text-stroke: $text-outline;
+                display: block;
+            }
+        } 
+    }
+    .navbar{
+        height: auto;
+        .icons{
+            float: right;
+        }
+    }
+    .image{
+        width: 35%;
+        height: 100%;
+       @include absolute-mid;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .arrow{
+        margin: 0 auto;
+        width: max-content;
+    }
+    .content1{
+        position: absolute;
+        width: 15%;
+        bottom: 25%;
+        @include galaxyfold{
+            bottom: 27%;
+            width: 18%;
+        }
+        @include midscreen{
+            bottom:20%;
+            width:20%;
+        }
+        @include verysmallscreen{
+            bottom: 30%;
+            width: 15%;
+        }
+        @include mobile{
+            width: 20%;
+        }
+        @include mediumscreen{
+            bottom: 26%;
+        }
+        @include ipad{
+            bottom: 28%;
+            width: 20%;
+        }
+        p{
+            color: $bg_grey;
+            font-style: italic;
+            font-size: 12px;
+            font-weight: bold;
+            @include verysmallscreen{
+                font-size: 4px;
+            }
+            @include mobile{
+                font-size: 6px;
+            }
+            @include midscreen{
+                font-size: 7px;
+            }
+            @include galaxyfold{
+                font-size: 3px;
+            }
+            @include mediumscreen{
+                font-size: 7px;
+            }
+        }
+        button{
+            @include btn($bg_yellow,$bg_black);
+            margin: 0 auto;
+            @include verysmallscreen{
+                font-size: 4px;
+                padding: 1px 5px;
+            }
+            @include mobile{
+                font-size: 5px;
+            }
+            @include galaxyfold{
+                font-size: 5px;
+                padding: 1px 4px;
+            }
+        }
+    }
+    i{
+        color: $bg_yellow;
+        font-size: 15px;
+        padding: 10px 3px;
+    }
+
+    
+}
+
+.container{
+    width: 1000px;
+	height: 100%;
+	margin: 0 auto;
+    @include galaxyfold{
+        width: 220px;
+    }
+    @include verysmallscreen{
+        width: 270px;
+    }
+    @include mobile{
+        width: 350px;
+    }
+    @include midscreen{
+        width: 450px;
+    }
+    @include mediumscreen{
+        width: 620px;
+    }
+    @include ipad{
+        width: 760px;
+    }
+    @include tab{
+        width: 900px;
+    }
+}
+
+.body2{
+    background-color: $bg_yellow;
+    .bg-image{
+        position: absolute;
+        bottom: 15%;
+        width: 25%;
+        transform: rotate(160deg);
+        left: -3%;
+    }
+    .bg-image1{
+        position: absolute;
+        top: 15%;
+        width: 25%;
+        right: -3%;
+   }
+    @include body-design;
+    i{
+        color: black;
+        font-size: 30px;
+        margin-right: 10px;
+        @include verysmallscreen{
+            font-size: 15px;
+        }
+        @include galaxyfold{
+            font-size: 10px;
+        }
+        @include mobile{
+            font-size: 18px;
+        }
+    }
+    #faded{
+        opacity: 0.5;
+    }
+    .container{
+        padding: 50px 0;
+    }
+
+    padding: 100px 0;
+    .content2{
+        text-align: center;
+        width: 65%;
+        margin: 0 auto;
+        @include verysmallscreen{
+            width: 70%;
+        }
+        @include mobile{
+            width: 75%;
+        }
+       
+        p{
+            font-size: 15px; 
+            font-style: italic;  
+            @include verysmallscreen{
+                font-size: 6px;
+            }        
+            @include mobile{
+                font-size: 10px;
+            }
+            @include midscreen{
+                font-size: 12px;
+            }
+            @include galaxyfold{
+                font-size: 5px;
+            }
+        }
+    }
+}
+
+.body3{
+    background: 
+    radial-gradient(
+      circle at 0% 80%, 
+        $bg_yellow 0%, 
+      rgba(0,0,0,0) 10% 
+    ), 
+    radial-gradient(
+      circle at 100% 20%, 
+      $bg_yellow 0%, 
+      $bg_black 10%, 
+      $bg_black 100%
+    );
+    @include ipad{
+        background: 
+        radial-gradient(circle at 0% 75%, $bg_yellow 0%, rgba(0,0,0,0) 8% ), 
+        radial-gradient(circle at 100% 20%, $bg_yellow 0%, $bg_black 10%, $bg_black 100%);
+    }
+    @include midscreen{
+        background: 
+        radial-gradient(circle at 0% 70%, $bg_yellow 0%, rgba(0,0,0,0) 8% ), 
+        radial-gradient(circle at 100% 20%, $bg_yellow 0%, $bg_black 10%, $bg_black 100%);
+    }
+    @include mediumscreen{
+        background: 
+        radial-gradient(circle at 0% 70%, $bg_yellow 0%, rgba(0,0,0,0) 8% ), 
+        radial-gradient(circle at 100% 20%, $bg_yellow 0%, $bg_black 10%, $bg_black 100%);
+    }
+    
+    @include body-design;
+    .f1{
+        position: absolute;
+        bottom: 12%;
+        right: -10%;
+        width: 25%;
+        @include verysmallscreen{
+            bottom: 16%;
+            width: 30%;
+        }
+        @include mobile{
+            bottom:16%;
+        }
+        @include ipad{
+            bottom: 16%;
+        }
+        @include mediumscreen{
+            bottom: 22%;
+        }
+        @include galaxyfold{
+            bottom: 16%;
+            width: 30%;
+        }
+        @include tab{
+            bottom: 16%;
+            width: 20%;
+        }
+        @include midscreen{
+            bottom: 27%;
+        }
+    }
+    .f2{
+        position: absolute;
+        bottom: 0%;
+        left: -5%;
+        width: 10%;
+        @include verysmallscreen{
+            width: 15%;
+        }
+    }
+    
+    h2{
+        text-align: center;
+        color: $bg_yellow;
+        span{
+            color: transparent;
+            -webkit-text-stroke: $text-outline;
+        }
+    }
+    .grid-container{
+        @include grid-mixin(2,0,100px);
+        @include mobile{
+            grid-template-columns: auto;
+            grid-row-gap: 20px;
+        }
+        @include galaxyfold{
+            grid-template-columns: auto;
+            grid-row-gap: 20px;
+        }
+    
+        @include verysmallscreen{
+            grid-template-columns: auto;
+            grid-row-gap: 20px;
+        }
+        @include ipad{
+            grid-column-gap: 60px;
+        }
+        @include midscreen{
+            grid-column-gap: 60px;
+        }
+        .grid2,.grid4{
+            margin-top: 100px;
+            @include verysmallscreen{
+                margin:0 ;
+            }
+            @include mobile{
+                margin: 0;
+            }
+            @include galaxyfold{
+                margin: 0;
+            }
+            @include midscreen{
+                margin-top: 60px;
+            }
+        }
+        img{
+            width: 100%;
+        }
+        button{
+            @include btn(transparent,$bg_yellow);
+            float: right;
+        }
+        .b3-text{
+            color: $bg_grey;
+            float: left;
+
+            h4{
+                 margin: 0;
+                @include midscreen{
+                    font-size: 12px;
+                }
+            }
+            p{
+                margin: 0;
+                font-size: 10px;
+            }
+        }
+        
+    }
+    
+    .arrow-div{
+        margin: 0 auto;
+        width: max-content;
+        text-align: center;
+        
+        i{
+            color: $bg_yellow;
+        }
+        p{
+            margin: 0;
+            color: $bg_grey;
+        }
+    }
+
+    .body3-2{
+        
+        h3{
+            padding-right: 30%;
+            -webkit-text-stroke: $text-outline;
+            color: transparent;
+            text-align: left;         
+        }
+
+        .grid-container{
+            @include grid-mixin(2,50px,100px);
+            @include mobile{
+                grid-template-columns: auto;
+                grid-row-gap: 0px;
+            }
+            @include galaxyfold{
+                grid-template-columns: auto;
+                grid-row-gap: 0px;
+            }
+            @include verysmallscreen{
+                grid-template-columns: auto;
+                grid-row-gap: 0px;
+            }
+            @include midscreen{
+                grid-template-columns: auto;
+                grid-row-gap: 0px;
+            }
+            color: $bg_grey;
+            p{
+                font-size: 10px;
+                @include verysmallscreen{
+                    font-size: 8px;
+                }
+                @include galaxyfold{
+                    font-size: 6px;
+                }
+            }
+            h4{
+                @include verysmallscreen{
+                    font-size: 10px;
+                }
+                @include galaxyfold{
+                    font-size: 8px;
+                }
+                @include mobile{
+                    font-size: 10px;
+                }
+                @include midscreen{
+                    font-size: 10px;
+                }
+            }
+        }
+    }
+}
+
+.body4{
+    @include body-design;
+    height: $height;
+    background-image: radial-gradient(circle at 50% 72%,$bg_yellow 0%,$bg_black 20%);
+    @include ipad{
+        background-image: radial-gradient(circle at 50% 60%,$bg_yellow 0%,$bg_black 20%);
+    }
+    @include midscreen{
+        background-image: radial-gradient(circle at 50% 55%,$bg_yellow 0%,$bg_black 20%);
+    }
+    @include tab{
+        background-image: radial-gradient(circle at 50% 60%,$bg_yellow 0%,$bg_black 20%);
+    }
+    @include mediumscreen{
+        background-image: radial-gradient(circle at 50% 60%,$bg_yellow 0%,$bg_black 20%);
+    }
+    @media screen and (min-width:1280px) {
+        background-image: radial-gradient(circle at 50% 60%,$bg_yellow 0%,$bg_black 20%);
+    }
+    .wrapper{
+        @include grid-mixin(2,0,0);
+        @include mobile{
+            grid-template-columns: auto;
+        }
+        @include galaxyfold{
+            grid-template-columns: auto;
+        }
+        @include verysmallscreen{
+            grid-template-columns: auto;
+        }
+        .w1,.w2,.w3,.w4{
+            position: relative;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+        }
+        .image-caption{
+            position: absolute;
+            z-index: 1;
+            overflow-wrap: break-word;
+            color: $bg_yellow;
+            width: 35%;
+            text-align: center;
+            margin:auto;
+            bottom: 30px;
+            left: 0;
+            right: 0;
+            h4{
+                margin: 0;
+                @include mobile{
+                    font-size: 10px;
+                }
+                @include verysmallscreen{
+                    font-size: 10px;
+                }
+                @include galaxyfold{
+                    font-size: 8px;
+                }
+                @include midscreen{
+                    font-size: 8px;
+                }
+                @include mediumscreen{
+                    font-size: 10px;
+                }
+                @include ipad{
+                    font-size: 10px;
+                }
+            }
+            
+            p{
+                font-weight: bold;
+                font-style: italic;
+                font-size: 12px;
+                @include mobile{
+                    font-size: 8px;
+                }
+                @include verysmallscreen{
+                    font-size: 8px;
+                }
+                @include galaxyfold{
+                    font-size: 6px;
+                }
+                @include midscreen{
+                    font-size: 6px;
+                }
+                @include mediumscreen{
+                    font-size: 8px;
+                }
+                @include ipad{
+                    font-size: 8px;
+                }
+            }
+            button{
+                @include btn($bg_yellow,$bg_black);
+            }
+        }
+    }
+
+    .designer{
+        text-align: center;
+        margin: 50px 0;
+        h2{
+            color: transparent;
+            -webkit-text-stroke: $text-outline;
+            margin: 0;
+            margin-bottom: 20px;
+        }
+    
+        p{
+            font-family: $heading-style;
+            color: $bg_grey;
+            margin: 0;
+            overflow: hidden;
+            white-space: nowrap;
+            font-size: 30px;
+            @include verysmallscreen{
+                font-size: 8px;
+            }
+            @include galaxyfold{
+                font-size: 8px;
+            }
+            @include mobile{
+                font-size: 9px;
+            }
+            @include ipad{
+                font-size: 17.5px;
+            }
+            @include midscreen{
+                font-size: 11.5px;
+            }
+           @include mediumscreen{
+               font-size: 16.5px;
+           }
+            @include tab{
+                font-size: 21.5px;
+            }
+        }
+        .shift{
+            margin-left: 120px;
+            @include verysmallscreen{
+                margin-left: 20px;
+            }
+            @include galaxyfold{
+                margin-left: 20px;
+            }
+            @include mobile{
+                margin-left: 30px;
+            }
+            @include midscreen{
+                margin-left: 55px;
+            }
+        }
+    
+        button{
+            @include btn(transparent,$bg_yellow);
+            margin-top: 20px;
+        }
+    }
+}
+
+.body5{
+    @include body-design;
+    height:auto;
+    padding:0;
+    color: $bg_black;
+    .bg-image2{
+        top: 15%;
+        position: absolute;
+        left: -3%;
+        width: 18%;
+        transform: rotate(185deg);
+        @include verysmallscreen{
+            top: 7%;
+            width: 20%;
+        }
+        @include galaxyfold{
+            top: 7%;
+            width: 20%;
+        }
+        @include mobile{
+            top: 7%;
+            width: 22%;
+        }
+    }
+    .grid-b5{
+        display:grid;
+        grid-template-columns: 60% 40%;
+        @include verysmallscreen{
+            grid-template-columns: auto;
+        }
+        @include galaxyfold{
+            grid-template-columns: auto;
+        }
+        @include mobile{
+         grid-template-columns: auto;
+     }  
+    }
+    .text{
+        padding: 20% 0;
+        background-color: $bg_yellow;
+        text-align: center;
+        height: 100%;
+        .content5{
+            text-align: center;
+            overflow-wrap: break-word;
+            width: 60%;
+            margin: 0 auto;
+            @include verysmallscreen{
+                width: 80%;
+            }
+            @include galaxyfold{
+                width: 80%;
+            }
+            @include midscreen{
+                width: 70%;
+            }
+            @include mediumscreen{
+                width: 62%;
+            }
+            p{
+                font-style: italic;
+                @include midscreen{
+                    font-size: 10px;
+                }
+                @include mediumscreen{
+                    font-size: 10px;
+                }
+                @include verysmallscreen{
+                    font-size: 10px;
+                }
+                @include galaxyfold{
+                    font-size: 10px;
+                }
+                @include mobile{
+                    font-size: 12px;
+                }
+            }
+            h3{
+                @include midscreen{
+                    font-size: 30px;
+                }
+                @include galaxyfold{
+                    font-size: 30px;
+                }
+                @include tab{
+                    font-size: 45px;
+                }
+                @include mediumscreen{
+                    font-size: 44px;
+                }
+                @include verysmallscreen{
+                    font-size: 40px;
+                }
+                @include mobile{
+                    font-size: 30px;
+                }
+            }
+            .input-email{
+                padding: 10px;
+                background-color: transparent;
+                border: 3px solid $bg_black;
+                color: $bg_black;
+                i{
+                    float: right;
+                }
+                input[type=text]{
+                    float: left;
+                    border:0;
+                    background-color: transparent;
+                    
+                }
+                ::placeholder{
+                    color: $bg_black;
+                }
+                @include clearfix;
+            }
+            .plus-icon{
+                margin-top: 100px;
+                #fade{
+                    opacity: 0.5;
+                }
+                i{
+                    font-size: 25px;
+                    margin-right: 20px;
+                    
+                }
+            }
+        }
+    }
+
+    .image{
+        
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    @include clearfix;
+    
+}
+
+.footer{
+    background-image: radial-gradient(circle at 50% 120%,$bg_yellow 0%,$bg_black 20%);
+    @include body-design;
+    &-grid{
+       @include grid-mixin(4,0,135px);
+       @include verysmallscreen{
+           grid-template-columns: auto;
+       }
+       @include galaxyfold{
+        grid-template-columns: auto;
+    }
+       @include mobile{ 
+        grid-template-columns: auto;
+    }
+    @include midscreen{
+        grid-template-columns: auto;
+    }
+    @include mediumscreen{
+        display: grid;
+        grid-template-columns: auto;
+    }
+    @include ipad{
+        grid-column-gap: 60px;
+    }
+    @include tab{
+        grid-column-gap: 110px;
+    }
+        h4{
+            color: $bg_yellow;
+            @include verysmallscreen{
+                font-size: 10px;
+            }
+            @include galaxyfold{
+                font-size: 10px;
+            }
+            @include mobile{
+                font-size: 10px;
+            }
+        }
+
+        ul {
+            padding: 0;
+            }
+            li{
+                list-style-type: none;
+                padding: 0;
+                @include verysmallscreen{
+                    display: inline;
+                    margin-right: 10px;
+                }
+                @include galaxyfold{
+                    display: inline;
+                    margin-right: 10px;
+                }
+                @include mobile{
+                    display: inline;
+                    margin-right: 10px;
+                }
+                @include midscreen{
+                    display: inline;
+                    margin-right: 10px;
+                }
+                @include mediumscreen{
+                    display: inline;
+                    margin-right: 10px;
+                }
+                a{
+                    color: $bg_grey;
+                    font-size: 12px;
+                    @include galaxyfold{
+                        font-size: 7px;
+                    }
+                }
+            
+        }
+         
+        
+    }
+    h4{
+        color: $bg_yellow;
+        @include verysmallscreen{
+            font-size: 8px;
+        }
+        @include galaxyfold{
+            font-size: 6px;
+        }
+        @include mobile{
+            font-size: 8px;
+        }
+    }
+}

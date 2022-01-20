@@ -1,0 +1,40 @@
+@mixin galaxyfold {
+    @media screen and (max-width:300px) {
+        @content;
+    }
+}
+
+@mixin verysmallscreen {
+    @media screen and (min-width:301px) and (max-width:375px) {
+        @content;
+    }
+}
+
+@mixin mobile{
+    @media screen and (min-width:376px) and (max-width:480px) {
+        @content;
+    }
+ }
+ @mixin midscreen {
+     @media screen and (min-width:481px) and (max-width:540px) {
+         @content;
+     }
+ }
+ @mixin mediumscreen {
+     @media screen and (min-width:541px) and (max-width:768px) {
+         @content;
+     }
+ }
+ 
+ @mixin ipad{
+     @media screen and(min-width:769px) and (max-width:1023px) {
+         @content;
+     }
+  }
+  
+  @mixin tab {
+      @media screen and (min-width:1024px) and (max-width:1200px) {
+          @content;
+      }
+  }
+ 

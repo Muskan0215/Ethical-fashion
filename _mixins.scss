@@ -1,0 +1,76 @@
+@mixin  clearfix {
+    &::after{
+        content: "";
+        clear: both;
+        display: table;
+    }
+}
+
+@mixin absolute-mid {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+@mixin  grid-mixin($columns,$row-gap,$column-gap) {
+    display: grid;
+    grid-template-columns: repeat($columns,1fr);
+    grid-gap: $row-gap $column-gap;
+}
+
+@mixin btn($bg,$color) {
+    background-color: $bg;
+    border: 2px solid $bg_yellow;
+    border-radius: 20px;
+    color: $color;
+    padding: 5px 10px;
+    font-size: 10px;
+    font-weight: bolder;
+    @include verysmallscreen{
+        font-size: 6px;
+    }
+    @include midscreen{
+        font-size: 6px;
+    }
+    @include mediumscreen{
+        font-size: 7px;
+    }
+    @include galaxyfold{
+        font-size: 6px;
+        padding: 3px 6px;
+    }
+}
+
+@mixin body-design {
+    width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    padding: 50px 0;
+    overflow: hidden;
+    @include galaxyfold{
+        width: 100%;
+        padding: 10px 0;
+    }
+    @include verysmallscreen{
+        width: 100%;
+        padding: 10px 0;
+    }
+    @include mobile{
+        width: 100%;
+        padding: 10px 0;
+    }
+    @include midscreen{
+        width: 100%;
+        padding: 10px 0;
+    }
+    @include ipad{
+        width: 100%;
+    }
+    @include tab{
+        width: 100%;
+    }
+    @include mediumscreen{
+        width: 100%;
+    }
+}
