@@ -10,24 +10,44 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript" src="script.js"></script>
     </head>
     
     <body>
         <div class="box">
         <div class="body1">
             <div class="bg-noise">
-
             </div>
             <div class="container">
                 <div class="navbar">
-                    <i class="fa fa-bars"></i>
+                    <i class="fa fa-bars" id="collapse-navbar"></i>
                     <div class="icons">
                         <i class="lni lni-search-alt"></i>
                         <i class="lni lni-briefcase"></i>
                     </div>
                 </div>
-                
+            
+            <div class="collapse" id="collapse">
+                <ul>
+                    <li>
+                        <a href="#body2">INFORMATION</a>
+                    </li>
+                    <li>
+                        <a href="#body3">OUR SHOP</a>
+                    </li>
+                    <li>
+                        <a href="#body4">OUR TEAM</a>
+                    </li>
+                    <li>
+                        <a href="#body5">JOIN US</a>
+                    </li>
+                    <li>
+                        <a href="#about">ABOUT US</a>
+                    </li>
+                </ul>
             </div>
+        </div>
             <div class="content">
                 <div class="flower">
                     <img src="./assignment-img/flower.png" class="flower-img" >
@@ -43,7 +63,7 @@
                     </div>
                     <div class="content1">
                         <p>Conscious style and design production that doesn't harm working conditions,the environment and animals.</p>
-                        <button><a href="#shopnow"><b>SHOP NOW</b></a></button>
+                        <a href="#shopnow"><b>SHOP NOW</b></a>
                     </div>
                     <div class="fashion">
                         <h2 class="solid">fashion</h2>
@@ -56,7 +76,7 @@
                     
             
 
-        <div class="body2">
+        <div class="body2" id="body2">
             <img src="./assignment-img/brush.png" class="bg-image"> 
             <img src="./assignment-img/brush.png" class="bg-image1"> 
             <div class="container">
@@ -72,50 +92,52 @@
             </div>
         </div>
 
-        <div class="body3">
+        <div class="body3" id="body3">
             <img src="./assignment-img/flower.png" class="f1">
             <img src="./assignment-img/flower.png" class="f2"> 
+            <div class="b3-radial"></div>
+            <div class="b3-radial2"></div>
             <div class="container">
                 <h2><span> our</span> shop</h2>
                 <div class="grid-container">
                     <div class="grid1">
                         <img src="./assignment-img/elegant-female-model-sitting-armchair-jacket-suit-new-feminity-concept.jpg">
-                        <div>
+                        <div class="shop">
                             <div class="b3-text">
                                 <h4>STYLE A</h4>
                                 <p>$99.99</p>
                             </div>
-                            <button><a href="#shopnow">ADD TO CART</a></button>
+                            <a href="#shopnow">ADD TO CART</a>
                         </div>
                     </div>
                     <div class="grid2">
                         <img src="./assignment-img/elegant-female-model-sitting-armchair-jacket-suit-new-feminity-concept1.jpg">
-                        <div>
+                        <div class="shop">
                             <div class="b3-text">
                                 <h4>STYLE B</h4>
                                 <p>$99.99</p>
                             </div>
-                            <button><a href="#shopnow">ADD TO CART</a></button>
+                            <a href="#shopnow">ADD TO CART</a>
                         </div>
                     </div>
                     <div class="grid3">
                         <img src="./assignment-img/elegant-female-model-sitting-armchair-jacket-suit-new-feminity-concept2.jpg">
-                        <div>
+                        <div class="shop">
                             <div class="b3-text">
                                 <h4>STYLE C</h4>
                                 <p>$99.99</p>
                             </div>
-                            <button><a href="#shopnow">ADD TO CART</a></button>
+                            <a href="#shopnow">ADD TO CART</a>
                         </div>
                     </div>
                     <div class="grid4">
                         <img src="./assignment-img/elegant-female-model-sitting-armchair-jacket-suit-new-feminity-concept3.jpg">
-                        <div>
+                        <div class="shop">
                             <div class="b3-text">
                                 <h4>STYLE D</h4>
                                 <p>$99.99</p>
                             </div>
-                            <button><a href="#shopnow">ADD TO CART</a></button>
+                            <a href="#shopnow">ADD TO CART</a>
                         </div>
                     </div>
                 </div>
@@ -157,14 +179,15 @@
             </div>
         </div>
 
-        <div class="body4">
+        <div class="body4" id="body4">
+            <div class="b4-radial"></div>
             <div class="wrapper">
                 <div class="w1">
                     <img src="./assignment-img/Place-Your-Image-Here-(Double-Click-to-Edit).jpg">
                     <div class="image-caption">
                         <h4>CLASSICS</h4>
                         <p>Conscious style and design production that doesn't harm working conditions,the environment and animals.</p>
-                        <button><a href="#shopnow">SHOP NOW</a></button>
+                        <a href="#shopnow">SHOP NOW</a>
                     </div>
                 </div>
                 <div class="w2">
@@ -172,7 +195,7 @@
                     <div class="image-caption">
                         <h4>OUR FAVES</h4>
                         <p>Conscious style and design production that doesn't harm working conditions,the environment and animals.</p>
-                        <button><a href="#shopnow">SHOP NOW</a></button>
+                        <a href="#shopnow">SHOP NOW</a>
                     </div>
                 </div>
                 <div class="w3">
@@ -180,7 +203,7 @@
                     <div class="image-caption">
                         <h4>BESTSELLERS</h4>
                         <p>Conscious style and design production that doesn't harm working conditions,the environment and animals.</p>
-                        <button><a href="#shopnow">SHOP NOW</a></button>
+                        <a href="#shopnow">SHOP NOW</a>
                     </div>
                 </div>
                 <div class="w4">
@@ -188,7 +211,7 @@
                     <div class="image-caption">
                         <h4>MODERN</h4>
                         <p>Conscious style and design production that doesn't harm working conditions,the environment and animals.</p>
-                        <button><a href="#shopnow">SHOP NOW</a></button>
+                        <a href="#shopnow">SHOP NOW</a>
                     </div>
                 </div>
             </div>
@@ -198,11 +221,11 @@
                 <p class="shift">KATHERINE SNIDER-ELIANA BRADY-ERYN BLOOM-LILLIE MAIMOM</p>
                 <p>KAYE HANNEN-MARY BRUCE-ANN HOLLAND-TIM CURRY-LAUVE HANSON</p>
                 <p class="shift">KATHERINE SNIDER-ELIANA BRADY-ERYN BLOOM-LILLIE MAIMOM</p>
-                <button><a href="#team">OUR TEAM</a></button>
+                <a href="#team">OUR TEAM</a>
             </div>
         </div>
 
-        <div class="body5">
+        <div class="body5" id="body5">
             <img src="./assignment-img/brush.png" class="bg-image2"> 
             <div class="grid-b5">
                 <div class="text">
@@ -231,14 +254,15 @@
             
         </div>
 
-        <div class="footer">
+        <div class="footer" id="about">
+            <div class="footer-radial"></div>
             <div class="container"> 
                 <div class="footer-grid">
                     <div class="f1">
                         <h4>OUR BRAND</h4>
                         <ul>
                             <li><a>New Designs</a></li>
-                            <li><a>weekly Insights</a></li>
+                            <li><a>Weekly Insights</a></li>
                             <li><a>Collaboration</a></li>
                             <li><a>Stay in the loop</a></li>
                         </ul>

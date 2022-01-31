@@ -10,6 +10,7 @@ div{
     box-sizing: border-box;
     h2,h3,h4{
         font-family: $heading-style;
+        font-weight: 400;
     }
     h2{
         font-size: 170px;
@@ -75,100 +76,72 @@ svg{
 }
 
 .body1{
-    background:
-    radial-gradient(ellipse at top,$bg_yellow 0%,$bg_black 30%);
-    ::after{
-        content: "";
-        position: absolute;
-        background-image: url(noise.svg);
-        background-size: cover;
-    }
-    
+    background-color: $bg_black;
+    @include noise;
     @include body-design;
-
-    @include mobile{
-        padding-bottom: 30px;
+   
+    .bg-noise{
+        left: 50%;
+        z-index: -1;
+        transform: translateX(-50%);
+        top: -30%;
+        @include radial;
+        @include ipad{
+            top: -60%;
+        }
+        @include mediumscreen{
+            top: -60%;
+        }
+        @include galaxyfold{
+            top: -60%;
+        }
+        @include tab{
+            top: -40%;
+        }
     }
     
-    /*.bg-noise{
-        background-image: radial-gradient(ellipse at top,$bg_yellow 0%,$bg_black 30%);
-    background-image: url(data:image/png;base64,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);
-   
-       background-image: radial-gradient(ellipse at top,$bg_yellow 0%,$bg_black 30%);
-        filter: blur(1px);
-        animation: movie 1s steps(4) infinite;
-        width: 100%;
-        position: absolute;
+    .collapse{
+        display: none;
+        text-align: center;
+        padding: 10px;
         height: 100%;
+        z-index: 1;
+        width: 100%;
+       ul{
+           list-style-type: none;
+           padding: 0;
+           li{
+            padding: 25px;
+            border-bottom: 0.5px dashed $bg_grey;
+            a{
+                cursor: pointer;
+                font-family: $info-style;
+                font-size: 25px;
+                text-decoration: none;
+                color: $bg_grey;
+                font-weight: bold;
+                &:hover{
+                    text-decoration: underline !important;
+                }
+            }
+           } 
+       }
     }
-    @keyframes movie {
-        0%{
-            transform: translate(0,0);
-        }
-    }*/
+    
     
     .content{
-        margin-top: 30px;
-        z-index: 2;
-        @include galaxyfold{
-            margin-top: 10px;
-        }
-        @include verysmallscreen{
-            margin-top: 10px;
-        }
-        @include mobile{
-            margin-top: 10px;
-        }
+        position: relative;
+        
         .flower{
             position: absolute;
-            right: -30px;
+            right: 40px;
+            width: 10%;
             text-align: center;
-            @include galaxyfold{
-                right: -52%;
-            }
-            @include verysmallscreen{
-                right: -35%;
-            }
-            @include mobile{
-                right: -30%;
-            }
-            @include ipad{
-                right: -12%;
-            }
-            @include mediumscreen{
-                right: -12%;
-            }
-            @include tab{
-                right: -10%;
-            }
-            @include midscreen{
-                right: -25%;
-            }
+           
             &-img{
                 position: relative;
-                width: 35%;
-    
-                @include galaxyfold{
-                    width: 15%;
-                }
-                @include verysmallscreen{
-                    width: 20%;
-                }
-                @include mobile{
-                    width: 20%;
-                }
-                @include ipad{
-                    width: 30%;
-                }
-                @include mediumscreen{
-                    width: 30%;
-                }
-                @include tab{
-                    width: 30%;
-                }
-                @include midscreen{
-                    width: 20%;
-                }
+                width: 100%;
+                height: 100%;
             }
             .text01{
                 color: $bg_grey;
@@ -176,28 +149,27 @@ svg{
                 font-family: $heading-style;
                 @include absolute-mid;
                 @include galaxyfold{
-                    font-size: 10px;
+                    font-size: 8px;
                 }
                 @include verysmallscreen{
-                    font-size: 15px;
-                    line-height: 3.6;
+                    font-size: 12px;
                 }
                 @include mobile{
-                    font-size: 15px;
+                    font-size: 12px;
                     margin-top: -5px;
                 }
                 @include ipad{
                     font-size: 25px;
                 }
                 @include mediumscreen{
-                    font-size: 25px;
+                    font-size: 15px;
                     margin-top: -3px;
                 }
                 @include tab{
                     font-size: 30px;
                 }
                 @include midscreen{
-                    font-size: 20px;
+                    font-size: 18px;
                     margin-top: -3px;
                 }
             }
@@ -208,6 +180,7 @@ svg{
             width: 35%;
             height: 100%;
             margin: 0 auto;
+            z-index: 0;
           }
           .image{
             img{
@@ -301,14 +274,16 @@ svg{
                         font-size: 12px;
                     }
                 }
-                button{
+                a{
                     @include btn($bg_yellow,$bg_black);
                     margin: 0 auto;
                     @include verysmallscreen{
                         padding: 1px 5px;
+                        font-size: 8px;
                     }
                     @include mobile{
                         padding: 1px 5px;
+                        font-size: 8px;
                     }
                     @include galaxyfold{
                         font-size: 5px;
@@ -317,32 +292,33 @@ svg{
                     @include midscreen{
                         padding: 1px 10px;
                     }
-                    a{
-                        @include verysmallscreen{
-                            font-size: 6px;
-                        }
-                        @include mobile{
-                            font-size: 8px;
-                        }
-                    }
+                    
                 }
             }
         }
+        .container{
+            z-index: 0;
+        }
     .navbar{
         height: auto;
+        z-index: 1;
         .icons{
             float: right;
+        }
+        i{
+            cursor: pointer;
         }
     }
 
     .arrow{
-        margin: 0 auto;
+        margin: 20px auto;
         width: max-content;
     }
     
     i{
         color: $bg_yellow;
         font-size: 15px;
+        font-weight: bold;
         padding: 10px 3px;
     }
 
@@ -353,20 +329,28 @@ svg{
     width: 1000px;
 	height: 100%;
 	margin: 0 auto;
+    padding: 50px 0;
     @include galaxyfold{
         width: 220px;
+        padding: 20px 0;
     }
     @include verysmallscreen{
         width: 270px;
+        padding: 20px 0;
     }
     @include mobile{
         width: 350px;
+        padding: 20px 0;
     }
     @include midscreen{
         width: 450px;
+        padding: 20px 0;
     }
     @include mediumscreen{
-        width: 620px;
+        width: 100%;
+        max-width: 620px;
+        padding: 20px;
+
     }
     @include ipad{
         width: 760px;
@@ -378,6 +362,9 @@ svg{
 
 .body2{
     background-color: $bg_yellow;
+    @media screen and (min-width:768px) {
+        padding: 100px 0;
+    }
     .bg-image{
         position: absolute;
         bottom: 15%;
@@ -413,7 +400,6 @@ svg{
         padding: 50px 0;
     }
 
-    padding: 100px 0;
     .content2{
         text-align: center;
         width: 65%;
@@ -454,34 +440,62 @@ svg{
 }
 
 .body3{
-    background: 
-    radial-gradient(
-      circle at 0% 80%, 
-        $bg_yellow 0%, 
-      rgba(0,0,0,0) 10% 
-    ), 
-    radial-gradient(
-      circle at 100% 20%, 
-      $bg_yellow 0%, 
-      $bg_black 10%, 
-      $bg_black 100%
-    );
-    @include ipad{
-        background: 
-        radial-gradient(circle at 0% 75%, $bg_yellow 0%, rgba(0,0,0,0) 8% ), 
-        radial-gradient(circle at 100% 20%, $bg_yellow 0%, $bg_black 10%, $bg_black 100%);
+    background-color: $bg_black;
+    .b3-radial{
+        @include radial;
+        transform: rotate(90deg);
+        top: 5%;
+        right: -20%;
+        filter: blur(50px);
+        @include verysmallscreen{
+            top: 2%;
+            right: -40%;
+        }
+        @include ipad{
+            right:-40%;
+        }
+        @include mediumscreen{
+            right: -40%;
+        }
+        @include midscreen{
+            right: -30%;
+        }
+        @include galaxyfold{
+            top: 1%;
+            right: -60%;
+        }
+        @include tab{
+            right: -30%;
+        }
     }
-    @include midscreen{
-        background: 
-        radial-gradient(circle at 0% 70%, $bg_yellow 0%, rgba(0,0,0,0) 8% ), 
-        radial-gradient(circle at 100% 20%, $bg_yellow 0%, $bg_black 10%, $bg_black 100%);
+    .b3-radial2{
+        @include radial;
+        transform: rotate(-90deg);
+        bottom: 27%;
+        left: -20%;
+        filter: blur(50px);
+        @include verysmallscreen{
+            left: -40%;
+        }
+        @include ipad{
+            left: -40%;
+        }
+        @include mediumscreen{
+            left: -40%;
+        }
+        @include midscreen{
+            left: -30%;
+            bottom: 50%;
+        }
+        @include galaxyfold{
+            left: -60%;
+        }
+        @include tab{
+            left: -30%;
+        }
     }
-    @include mediumscreen{
-        background: 
-        radial-gradient(circle at 0% 70%, $bg_yellow 0%, rgba(0,0,0,0) 8% ), 
-        radial-gradient(circle at 100% 20%, $bg_yellow 0%, $bg_black 10%, $bg_black 100%);
-    }
-    
+    @include noise;
+   
     @include body-design;
     .f1{
         position: absolute;
@@ -539,6 +553,7 @@ svg{
     }
     .grid-container{
         @include grid-mixin(2,0,100px);
+        
         @include mobile{
             grid-template-columns: auto;
             grid-row-gap: 20px;
@@ -573,17 +588,24 @@ svg{
                 margin-top: 60px;
             }
         }
+        .grid1,.grid2,.grid3,.grid4{
+            z-index: 2;
+        }
         img{
             width: 100%;
         }
-        button{
+        a{
             @include btn(transparent,$bg_yellow);
             float: right;
         }
+        .shop{
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
         .b3-text{
             color: $bg_grey;
-            float: left;
-
             h4{
                  margin: 0;
                  font-size: 25px;
@@ -615,9 +637,9 @@ svg{
         
         i{
             color: $bg_yellow;
+            font-weight: 900;
         }
         p{
-            margin: 0;
             color: $bg_grey;
         }
     }
@@ -678,6 +700,7 @@ svg{
             color: $bg_grey;
             p{
                 font-size: 16px;
+                line-height: 1.5;
                 @include verysmallscreen{
                     font-size: 12px;
                 }
@@ -708,23 +731,35 @@ svg{
 
 .body4{
     @include body-design;
+    background-color: $bg_black;
+    @include noise;
     height: $height;
-    background-image: radial-gradient(circle at 50% 72%,$bg_yellow 0%,$bg_black 20%);
-    @include ipad{
-        background-image: radial-gradient(circle at 50% 60%,$bg_yellow 0%,$bg_black 20%);
+    .b4-radial{
+        @include radial;
+        width: 65rem;
+        top: 40%;
+        left: 50%;
+        transform: translateX(-50%);
+        @include mobile{
+            top: 70%;
+        }
+        @include verysmallscreen{
+            top: 70%;
+        }
+        @include ipad{
+            top: 20%;
+        }
+        @include mediumscreen{
+            top: 20%;
+        }
+       @include galaxyfold{
+           top: 60%;
+       }
+       @include tab{
+           top: 30%;
+       }
     }
-    @include midscreen{
-        background-image: radial-gradient(circle at 50% 55%,$bg_yellow 0%,$bg_black 20%);
-    }
-    @include tab{
-        background-image: radial-gradient(circle at 50% 60%,$bg_yellow 0%,$bg_black 20%);
-    }
-    @include mediumscreen{
-        background-image: radial-gradient(circle at 50% 60%,$bg_yellow 0%,$bg_black 20%);
-    }
-    @media screen and (min-width:1280px) {
-        background-image: radial-gradient(circle at 50% 60%,$bg_yellow 0%,$bg_black 20%);
-    }
+   
     .wrapper{
         @include grid-mixin(2,0,0);
         @include mobile{
@@ -811,9 +846,8 @@ svg{
                 @include midscreen{
                     font-size: 9px;
                 }
-
             }
-            button{
+            a{
                 @include btn($bg_yellow,$bg_black);
                 padding: 5px 15px;
                 @include midscreen{
@@ -892,8 +926,9 @@ svg{
             }
         }
     
-        button{
+        a{
             @include btn(transparent,$bg_yellow);
+            display: inline-block;
             margin-top: 20px;
             padding: 8px 20px;
             font-weight: bold;
@@ -903,6 +938,8 @@ svg{
 
 .body5{
     @include body-design;
+    background-color: $bg_black;
+    @include noise;
     height:auto;
     padding:0;
     color: $bg_black;
@@ -945,7 +982,6 @@ svg{
         height: 100%;
         .content5{
             text-align: center;
-            overflow-wrap: break-word;
             width: 60%;
             margin: 0 auto;
             @include verysmallscreen{
@@ -1001,6 +1037,7 @@ svg{
             
             h3{
                 font-size: 70px;
+                line-height: 1.25;
                 margin:15px 0;
                 @include midscreen{
                     font-size: 30px;
@@ -1027,24 +1064,10 @@ svg{
             .input-email{
                 display: flex;
                 place-items: center;
+                position: relative;
                 i{
                     position: absolute;
-                    right: 58%;
-                    @include verysmallscreen{
-                        right: 22%;
-                    }
-                    @include mobile{
-                        right: 25%;
-                    }
-                    @include ipad{
-                        right: 57%;
-                    }
-                    @include midscreen{
-                        right: 55%;
-                    }
-                    @include galaxyfold{
-                        right: 22%;
-                    }
+                    right: 15%;
                 }
                 input[type=text]{
                     padding: 15px;
@@ -1090,8 +1113,30 @@ svg{
 }
 
 .footer{
-    background-image: radial-gradient(circle at 50% 120%,$bg_yellow 0%,$bg_black 20%);
     @include body-design;
+    background-color: $bg_black;
+    @include noise;
+    .footer-radial{
+        @include radial;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -110%;
+        @include mobile{
+            bottom: -40%;
+        }
+        @include mediumscreen{
+            bottom: -60%;
+        }
+        @include verysmallscreen{
+            bottom: -40%;
+        }
+        @include midscreen{
+            bottom: -40%;
+        }
+        @include galaxyfold{
+            bottom: -40%;
+        }
+    }
     &-grid{
        @include grid-mixin(4,0,85px);
        @include verysmallscreen{
@@ -1159,7 +1204,7 @@ svg{
                 a{
                     font-family:$info-style;
                     color: $bg_grey;
-                    font-size: 12px;
+                    font-size: 14px;
                     @include galaxyfold{
                         font-size: 9px;
                     }
