@@ -20,3 +20,9 @@ $(document).ready(function(){
   });
 });
 
+$(document).ready(function(){
+  $('#searchbutton').click(function(){
+      $('#searchplace').toggle("slideleft");
+  });
+});
+
