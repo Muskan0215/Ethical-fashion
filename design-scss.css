@@ -249,6 +249,30 @@ svg {
   }
 }
 
+.body1 #searchplace {
+  display: none;
+  background-color: transparent;
+  color: #DED9D2;
+  border-bottom: 2px solid #DED9D2;
+  font-family: "Chivo", sans-serif;
+}
+
+.body1 ::-webkit-input-placeholder {
+  color: #DED9D2;
+}
+
+.body1 :-ms-input-placeholder {
+  color: #DED9D2;
+}
+
+.body1 ::-ms-input-placeholder {
+  color: #DED9D2;
+}
+
+.body1 ::placeholder {
+  color: #DED9D2;
+}
+
 .body1 .collapse {
   display: none;
   text-align: center;
@@ -2466,6 +2490,10 @@ svg {
   grid-gap: 0 85px;
 }
 
+.footer-grid div {
+  z-index: 2;
+}
+
 @media screen and (min-width: 301px) and (max-width: 375px) {
   .footer-grid {
     -ms-grid-columns: auto;
@@ -2584,6 +2612,7 @@ svg {
 
 .footer-grid li a {
   font-family: "Chivo", sans-serif;
+  cursor: pointer;
   color: #DED9D2;
   font-size: 14px;
 }

@@ -100,6 +100,18 @@ svg{
         }
     }
     
+    #searchplace{
+        display: none;
+        background-color: transparent;
+        color: $bg_grey;
+        border-bottom: 2px solid $bg_grey;
+        font-family: $info-style;
+    }
+
+    ::placeholder{
+        color: $bg_grey;
+    }
+
     .collapse{
         display: none;
         text-align: center;
@@ -1138,6 +1150,9 @@ svg{
         }
     }
     &-grid{
+        div{
+            z-index: 2;
+        }
        @include grid-mixin(4,0,85px);
        @include verysmallscreen{
            grid-template-columns: auto;
@@ -1203,6 +1218,7 @@ svg{
                 }
                 a{
                     font-family:$info-style;
+                    cursor: pointer;
                     color: $bg_grey;
                     font-size: 14px;
                     @include galaxyfold{
