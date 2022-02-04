@@ -26,6 +26,9 @@ div{
         @include ipad{
             font-size: 110px;
         }
+        @include mid-screen1{
+            font-size: 75px;
+        }
         @include midscreen{
             font-size: 70px;
         }
@@ -53,6 +56,9 @@ div{
         @include midscreen{
             font-size: 22px;
         }
+        @include mid-screen1{
+            font-size: 22px;
+        }
         @include mediumscreen{
             font-size: 32px;
         }
@@ -76,10 +82,11 @@ svg{
 }
 
 .body1{
+    
     background-color: $bg_black;
     @include noise;
     @include body-design;
-   
+    z-index: 1;
     .bg-noise{
         left: 50%;
         z-index: -1;
@@ -100,44 +107,56 @@ svg{
         }
     }
     
-    #searchplace{
-        display: none;
-        background-color: transparent;
-        color: $bg_grey;
-        border-bottom: 2px solid $bg_grey;
-        font-family: $info-style;
-    }
-
-    ::placeholder{
-        color: $bg_grey;
-    }
-
     .collapse{
         display: none;
         text-align: center;
         padding: 10px;
+        position: fixed;
         height: 100%;
-        z-index: 1;
+        background-color: $bg_black;
+        opacity: 0.8;
+        z-index: 9999;
+        color: $bg_grey;
         width: 100%;
-       ul{
-           list-style-type: none;
-           padding: 0;
-           li{
-            padding: 25px;
-            border-bottom: 0.5px dashed $bg_grey;
-            a{
-                cursor: pointer;
-                font-family: $info-style;
-                font-size: 25px;
-                text-decoration: none;
+        .close-button{
+            background-color: transparent;
+            position: absolute;
+            right: 30px;
+            top: 30px;
+            cursor: pointer;
+            i{
                 color: $bg_grey;
-                font-weight: bold;
-                &:hover{
-                    text-decoration: underline !important;
-                }
+                font-size: 35px;
             }
-           } 
-       }
+        }
+         .nav-collapse{
+             position: absolute;
+             top: 50%;
+             left: 50%;
+             transform: translate(-50%,-50%);
+            ul{
+                list-style-type: none;
+                padding: 0;
+                li{
+                 padding: 25px;
+                 @include verysmallscreen{
+                     padding: 10px;
+                 }
+                 a{
+                     cursor: pointer;
+                     font-family: $info-style;
+                     font-size: 25px;
+                     text-decoration: none;
+                     color: $bg_grey;
+                     font-weight: bold;
+                     @include verysmallscreen{
+                         font-size: 20px;
+                     }
+                 }
+                } 
+            }
+         }   
+       
     }
     
     
@@ -149,6 +168,32 @@ svg{
             right: 40px;
             width: 10%;
             text-align: center;
+            @include galaxyfold{
+                width: 17%;
+                right: 15px;
+            }
+
+            @include  ipad{
+                width: 15%;
+            }
+            @include verysmallscreen{
+                width: 17%;
+                right: 20px;
+            }
+
+            @include mobile{
+                width: 17%;
+                right: 20px;
+            }
+
+            @include mid-screen1{
+                width: 17%;
+            }
+
+            @include midscreen{
+                width: 15%;
+                right: 15px;
+            }
            
             &-img{
                 position: relative;
@@ -161,14 +206,13 @@ svg{
                 font-family: $heading-style;
                 @include absolute-mid;
                 @include galaxyfold{
-                    font-size: 8px;
+                    font-size: 10px;
                 }
                 @include verysmallscreen{
-                    font-size: 12px;
+                    font-size: 14px;
                 }
                 @include mobile{
-                    font-size: 12px;
-                    margin-top: -5px;
+                    font-size: 14px;
                 }
                 @include ipad{
                     font-size: 25px;
@@ -213,6 +257,21 @@ svg{
               &.stroke {
                 color: transparent;
                 -webkit-text-stroke:$text-outline;
+                @include verysmallscreen{
+                    -webkit-text-stroke: 1px $bg_yellow;
+                }
+                @include mobile{
+                    -webkit-text-stroke: 1px $bg_yellow;
+                }
+                @include galaxyfold{
+                    -webkit-text-stroke: 1px $bg_yellow;
+                }
+                @include midscreen{
+                    -webkit-text-stroke: 1px $bg_yellow;
+                }
+                @include mid-screen1{
+                    -webkit-text-stroke: 1px $bg_yellow;
+                }
                 z-index: 2;
               }
             }
@@ -229,30 +288,46 @@ svg{
                   color: transparent;
                   -webkit-text-stroke:$text-outline;
                   z-index: 2;
+                  @include verysmallscreen{
+                    -webkit-text-stroke: 1px $bg_yellow;
+                }
+                @include mobile{
+                    -webkit-text-stroke: 1px $bg_yellow;
+                }
+                @include galaxyfold{
+                    -webkit-text-stroke: 1px $bg_yellow;
+                }
+                @include midscreen{
+                    -webkit-text-stroke: 1px $bg_yellow;
+                }   
                 }
               }
             }
             .content1{
                 position: absolute;
-                width: 53%;
+                width: 220px;
                 text-align: left;
                 top: 70%;
-                left: -275px;
+                left: -290px;
                 @include galaxyfold{
                    left: -70%;
-                   width: 70%;
+                   width: 75px;
                 }
                 @include midscreen{
                    left: -70%;
-                   width: 70%;
+                   width: 125px;
+                }
+                @include mid-screen1{
+                    width: 135px;
+                    left: -80%;
                 }
                 @include verysmallscreen{
-                    left: -80px;
-                    width: 60%;
+                    left: -100px;
+                    width: 80%;
                 }
                 @include mobile{
-                    width: 65%;
-                    left: -70%;
+                    width: 85%;
+                    left: -85%;
                 }
                 @include mediumscreen{
                    left: -70%;
@@ -268,19 +343,22 @@ svg{
                 p{
                     color: $bg_grey;
                     font-style: italic;
-                    font-size: 13px;
+                    font-size: 17px;
                     font-weight: bold;
                     @include verysmallscreen{
-                        font-size: 6px;
+                        font-size: 8px;
+                    }
+                    @include mid-screen1{
+                        font-size: 12px;
                     }
                     @include mobile{
-                        font-size: 8px;
+                        font-size: 10px;
                     }
                     @include midscreen{
                         font-size: 10px;
                     }
                     @include galaxyfold{
-                        font-size: 5px;
+                        font-size: 8px;
                     }
                     @include mediumscreen{
                         font-size: 12px;
@@ -291,14 +369,14 @@ svg{
                     margin: 0 auto;
                     @include verysmallscreen{
                         padding: 1px 5px;
-                        font-size: 8px;
+                        font-size: 10px;
                     }
                     @include mobile{
                         padding: 1px 5px;
-                        font-size: 8px;
+                        font-size: 12px;
                     }
                     @include galaxyfold{
-                        font-size: 5px;
+                        font-size: 10px;
                         padding: 1px 4px;
                     }
                     @include midscreen{
@@ -313,28 +391,63 @@ svg{
         }
     .navbar{
         height: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         z-index: 1;
-        .icons{
-            float: right;
-        }
         i{
             cursor: pointer;
+            @include galaxyfold{
+                font-size: 17px;
+            }
         }
     }
-
-    .arrow{
-        margin: 20px auto;
-        width: max-content;
-    }
-    
     i{
         color: $bg_yellow;
-        font-size: 15px;
-        font-weight: bold;
+        font-size: 24px;
         padding: 10px 3px;
+        @include midscreen{
+            font-size: 15px;
+        }
     }
-
-    
+    .arrow-div{
+        @include verysmallscreen{
+            margin: 10px auto;
+            i{
+                font-size: 15px;
+            }
+            p{
+                margin-top: 0;
+            }
+        }
+        @include mediumscreen{
+            margin:20px auto;
+        }
+        @include mid-screen1{
+            margin: 20px auto;
+        }
+        @include midscreen{
+            margin:20px auto;
+        }
+        @include mobile{
+            margin: 10px auto;
+            i{
+                font-size: 15px;
+            }
+            p{
+                margin-top: 0;
+            }
+        }
+        @include galaxyfold{
+            margin: 10px auto;
+            i{
+                font-size: 15px;
+            }
+            p{
+                margin-top: 0;
+            }
+        }
+    }
 }
 
 .container{
@@ -356,6 +469,10 @@ svg{
     }
     @include midscreen{
         width: 450px;
+        padding: 20px 0;
+    }
+    @include mid-screen1{
+        width: 490px;
         padding: 20px 0;
     }
     @include mediumscreen{
@@ -422,7 +539,15 @@ svg{
         @include mobile{
             width: 75%;
         }
-        
+        @include galaxyfold{
+            width: 80%;
+        }
+        h3{
+            @include galaxyfold{
+                font-size: 14px;
+            }
+        }
+
         p{
             font-size: 15px; 
             font-style: italic;  
@@ -439,7 +564,7 @@ svg{
                 font-size: 12px;
             }
             @include galaxyfold{
-                font-size: 10px;
+                font-size: 12px;
             }
             @include mediumscreen{
                 font-size: 20px;
@@ -448,6 +573,22 @@ svg{
                 font-size: 20px;
             }
         }
+    }
+}
+
+.arrow-div{
+    margin: 70px auto;
+    width: max-content;
+    text-align: center;
+    
+    i{
+        color: $bg_yellow;
+        font-weight: 900;
+    }
+    a{
+        color: $bg_grey;
+        text-decoration: none;
+        cursor: pointer;
     }
 }
 
@@ -518,8 +659,12 @@ svg{
             bottom: 25%;
             width: 30%;
         }
+        @include mid-screen1{
+            bottom: 35%;
+            width: 28%;
+        }
         @include mobile{
-            bottom:25%;
+            bottom:27%;
             width: 30%;
         }
         @include ipad{
@@ -558,9 +703,19 @@ svg{
         @include galaxyfold{
             margin: 0 0 20px 0;
         }
+       
         span{
             color: transparent;
             -webkit-text-stroke: $text-outline;
+            @include verysmallscreen{
+                -webkit-text-stroke: 1px $bg_yellow;
+            }
+            @include mobile{
+                -webkit-text-stroke: 1px $bg_yellow;
+            }
+            @include galaxyfold{
+                -webkit-text-stroke: 1px $bg_yellow;
+            }
         }
     }
     .grid-container{
@@ -574,6 +729,10 @@ svg{
             grid-template-columns: auto;
             grid-row-gap: 20px;
         }
+
+        @include mediumscreen{
+            grid-column-gap: 50px;
+        }
     
         @include verysmallscreen{
             grid-template-columns: auto;
@@ -583,7 +742,10 @@ svg{
             grid-column-gap: 60px;
         }
         @include midscreen{
-            grid-column-gap: 60px;
+            grid-column-gap: 45px;
+        }
+        @include mid-screen1{
+            grid-column-gap: 40px;
         }
         .grid2,.grid4{
             margin-top: 100px;
@@ -599,22 +761,40 @@ svg{
             @include midscreen{
                 margin-top: 60px;
             }
+            @include mid-screen1{
+                margin-top: 60px;
+            }
         }
         .grid1,.grid2,.grid3,.grid4{
             z-index: 2;
         }
         img{
             width: 100%;
+
         }
         a{
             @include btn(transparent,$bg_yellow);
-            float: right;
+            @include galaxyfold{
+                line-height: 2.6;
+            }
+            
         }
         .shop{
             margin-top: 10px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            @include mid-screen1{
+                display: grid;
+                a{
+                    font-size: 15px;
+                    width: 100%;
+                    left: 50%;
+                    transform: translatex(13px);
+                    margin-top: 20px;
+                    text-align: center;
+                }
+            }
         }
         .b3-text{
             color: $bg_grey;
@@ -633,7 +813,11 @@ svg{
                 @include mediumscreen{
                     font-size: 20px;
                 }
+                @include mid-screen1{
+                    font-size: 18px;
+                }
             }
+           
             p{
                 margin: 0;
                 font-size: 16px;
@@ -642,46 +826,44 @@ svg{
         
     }
     
-    .arrow-div{
-        margin: 70px auto;
-        width: max-content;
-        text-align: center;
-        
-        i{
-            color: $bg_yellow;
-            font-weight: 900;
-        }
-        p{
-            color: $bg_grey;
-        }
-    }
-
     .body3-2{
         
         h3{
             padding-right: 20%;
             -webkit-text-stroke: $text-outline;
-            color: transparent;
-            text-align: left;    
-            font-size: 70px; 
-            @include galaxyfold{
-                font-size: 20px;
-                padding-right: 0;
-            } 
             @include verysmallscreen{
+                -webkit-text-stroke: 1px $bg_yellow;
                 font-size: 22px;
                 padding-right: 10%;
-            }   
-            @include mobile{
-                font-size: 25px;
             }
-            @include ipad{
-                font-size: 54px;
+            @include mobile{
+                -webkit-text-stroke: 1px $bg_yellow;
+                font-size: 30px;
+                padding: 0;
             }
             @include midscreen{
+                -webkit-text-stroke: 1px $bg_yellow;
                 font-size: 35px;
                 padding: 0;
             }
+            @include mid-screen1{
+                -webkit-text-stroke: 1px $bg_yellow;
+                font-size: 40px;
+                padding: 0;
+            }
+            @include galaxyfold{
+                -webkit-text-stroke: 1px $bg_yellow;
+                font-size: 20px;
+                padding-right: 0;
+            }
+            color: transparent;
+            text-align: left;    
+            font-size: 70px; 
+           
+            @include ipad{
+                font-size: 54px;
+            }
+           
             @include mediumscreen{
                 font-size: 50px;
                 padding-right: 0;
@@ -709,6 +891,14 @@ svg{
                 grid-template-columns: auto;
                 grid-row-gap: 0px;
             }
+            @include mid-screen1{
+                grid-column-gap: 20px;
+                grid-row-gap: 20px;
+            }
+            @include mediumscreen{
+                grid-column-gap: 20px;
+                grid-row-gap: 20px;
+            }
             color: $bg_grey;
             p{
                 font-size: 16px;
@@ -721,6 +911,9 @@ svg{
                 }
                 @include mediumscreen{
                     font-size: 13px;
+                }
+                @include mid-screen1{
+                    font-size: 14px;
                 }
             }
             h4{
@@ -795,7 +988,7 @@ svg{
             z-index: 1;
             overflow-wrap: break-word;
             color: $bg_yellow;
-            width: 35%;
+            width: 40%;
             text-align: center;
             margin:auto;
             bottom: 30px;
@@ -803,6 +996,9 @@ svg{
             right: 0;
             @include verysmallscreen{
                 width: 60%;
+            }
+            @include mid-screen1{
+                width: 70%;
             }
             @include galaxyfold{
                 width: 60%;
@@ -815,7 +1011,7 @@ svg{
                 width: 50%;
             }
             @include mediumscreen{
-                width: 50%;
+                width: 70%;
             }
             @include midscreen{
                 width: 70%;
@@ -836,6 +1032,9 @@ svg{
                 @include midscreen{
                     font-size: 14px;
                 }
+                @include mid-screen1{
+                    font-size: 15px;
+                }
                 @include mediumscreen{
                     font-size: 14px;
                 }
@@ -847,8 +1046,8 @@ svg{
             p{
                 font-weight: bold;
                 font-style: italic;
-                font-size: 12px;
-                
+                font-size: 16px;
+               
                 @include verysmallscreen{
                     font-size: 10px;
                 }
@@ -857,6 +1056,12 @@ svg{
                 }
                 @include midscreen{
                     font-size: 9px;
+                }
+                @include mid-screen1{
+                    font-size: 12px;
+                }
+                @include mediumscreen{
+                    font-size: 14px;
                 }
             }
             a{
@@ -880,6 +1085,15 @@ svg{
             -webkit-text-stroke: $text-outline;
             margin: 0;
             margin-bottom: 20px;
+            @include verysmallscreen{
+                -webkit-text-stroke: 1px $bg_yellow;
+            }
+            @include mobile{
+                -webkit-text-stroke: 1px $bg_yellow;
+            }
+            @include galaxyfold{
+                -webkit-text-stroke: 1px $bg_yellow;
+            }
         }
     
         p{
@@ -905,6 +1119,9 @@ svg{
             }
             @include midscreen{
                 font-size: 11.5px;
+            }
+            @include mid-screen1{
+                font-size: 12.5px;
             }
            @include mediumscreen{
                font-size: 16.5px;
@@ -932,6 +1149,9 @@ svg{
             }
             @include midscreen{
                 margin-left: 35px;
+            }
+            @include mid-screen1{
+                margin-left: 30px;
             }
             @include tab{
                 margin-left: 50px;
@@ -1008,6 +1228,9 @@ svg{
             @include midscreen{
                 width: 70%;
             }
+            @include mid-screen1{
+                width: 70%;
+            }
             @include mediumscreen{
                 width: 70%;
             }
@@ -1026,6 +1249,9 @@ svg{
                 @include mediumscreen{
                     width: 70%;
                 }
+                @include mid-screen1{
+                    width: 70%;
+                }
                 p{
                     font-style: italic;font-size: 14px;
                     font-weight: bold;
@@ -1033,6 +1259,9 @@ svg{
                         font-size: 10px;
                     }
                     @include mediumscreen{
+                        font-size: 14px;
+                    }
+                    @include mid-screen1{
                         font-size: 14px;
                     }
                     @include verysmallscreen{
@@ -1062,6 +1291,9 @@ svg{
                 }
                 @include mediumscreen{
                     font-size: 44px;
+                }
+                @include mid-screen1{
+                    font-size: 35px;
                 }
                 @include verysmallscreen{
                     font-size: 40px;
@@ -1176,6 +1408,9 @@ svg{
     @include tab{
         grid-column-gap: 40px;
     }
+    @include mid-screen1{
+        grid-column-gap: 20px;
+    }
         h4{
             color: $bg_yellow;
             font-size: 25px;
@@ -1230,6 +1465,9 @@ svg{
                     @include mediumscreen{
                         font-size: 20px;
                     }
+                    @include mid-screen1{
+                        font-size: 12px;
+                    }
                 }
             
         }
@@ -1240,6 +1478,9 @@ svg{
         color: $bg_yellow;
         @include verysmallscreen{
             font-size: 12px;
+        }
+        @include mid-screen1{
+            font-size: 14px;
         }
         @include galaxyfold{
             font-size: 12px;

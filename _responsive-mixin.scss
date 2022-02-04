@@ -20,8 +20,13 @@
          @content;
      }
  }
+ @mixin mid-screen1 {
+    @media screen and (min-width:541px) and (max-width:630px) {
+        @content;
+    }
+}
  @mixin mediumscreen {
-     @media screen and (min-width:541px) and (max-width:768px) {
+     @media screen and (min-width:631px) and (max-width:768px) {
          @content;
      }
  }

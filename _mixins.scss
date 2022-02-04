@@ -26,25 +26,30 @@
     border-radius: 50px;
     padding: 10px 20px;
     line-height: 1.6;
-    &:hover{
-        text-decoration: underline;
-    }
+    font-family: $info-style;
     @include midscreen{
         padding: 5px 10px;
+        font-size: 12px;
+    }
+    @include mid-screen1{
+        font-size: 12px;
+    }
+    @include mediumscreen{
+        font-size: 14px;
+    }
+    @include verysmallscreen{
+        line-height: 2;
+        font-size: 13px;
     }
     @include galaxyfold{
         padding: 2px 10px;
+        font-size: 12px;
     }
         text-decoration: none;
         color: $color;
         font-weight: 900;
-        font-size: 14px;
-        @include midscreen{
-            font-size: 9px;
-        }
-        @include galaxyfold{
-            font-size: 8px;
-        }
+        font-size: 16px;
+       
     }
 
     @mixin radial {
@@ -66,6 +71,10 @@
             width: 20rem;
             height: 20rem;
         }
+        @include mid-screen1{
+            width: 20rem;
+            height: 20rem;
+        }
         @include galaxyfold{
             width: 20rem;
             height: 20rem;
@@ -79,7 +88,7 @@
             background-size: 200px 166px;
             background-position: center;
             background-repeat: repeat;
-            opacity: 0.2;
+            opacity: 0.3;
             height: 100%;
             z-index: -1;
             width: 100%;
@@ -93,25 +102,4 @@
     position: relative;
     z-index: 0;
     overflow: hidden;
-    @include galaxyfold{
-        width: 100%;
-    }
-    @include verysmallscreen{
-        width: 100%;
-    }
-    @include mobile{
-        width: 100%;
-    }
-    @include midscreen{
-        width: 100%;
-    }
-    @include ipad{
-        width: 100%;
-    }
-    @include tab{
-        width: 100%;
-    }
-    @include mediumscreen{
-        width: 100%;
-    }
 }
