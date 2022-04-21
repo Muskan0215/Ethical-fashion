@@ -1174,6 +1174,11 @@ svg{
                 a{
                     font-size: 8px;
                 }
+
+                &:hover{
+                    background-color: transparent;
+                    color: $bg_yellow;
+                }
             }
         }
     }
