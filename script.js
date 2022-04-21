@@ -6,6 +6,13 @@ $(document).ready(function(){
   });
 });
 
+$(function() {
+  AOS.init({
+    duration:2000,
+    easing: 'ease-in-out-back',
+  });
+});
+
 $(document).ready(function(){
   $('.close-button').click(function(){
       $('.collapse').hide("slow");

@@ -52,6 +52,18 @@
        
     }
 
+    @mixin overlay{
+        &::before{
+            content: '';
+            position: absolute;
+            background-color: rgba(0,0,0,0.7);
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+        }
+    }
+
     @mixin radial {
         content: '';
         position: absolute;

@@ -137,7 +137,7 @@ svg{
                 list-style-type: none;
                 padding: 0;
                 li{
-                 padding: 25px;
+                 padding: 20px;
                  @include verysmallscreen{
                      padding: 10px;
                  }
@@ -251,7 +251,6 @@ svg{
               color: $bg_yellow;
               position: absolute;
               left: -92%;
-              position: absolute;
               z-index: -1;
               &.stroke {
                 color: transparent;
@@ -309,8 +308,11 @@ svg{
                 top: 70%;
                 left: -290px;
                 @include galaxyfold{
-                   left: -70%;
-                   width: 75px;
+                    width: 200%;
+                    left: 50%;
+                    top: 100%;
+                    transform: translate(-50%,0);
+                    text-align: center;
                 }
                 @include midscreen{
                    left: -70%;
@@ -321,12 +323,19 @@ svg{
                     left: -80%;
                 }
                 @include verysmallscreen{
-                    left: -100px;
-                    width: 80%;
+
+                    width: 200%;
+                    left: 50%;
+                    top: 100%;
+                    transform: translate(-50%,0);
+                    text-align: center;
                 }
                 @include mobile{
-                    width: 85%;
-                    left: -85%;
+                    width: 200%;
+                    left: 50%;
+                    top: 100%;
+                    transform: translate(-50%,0);
+                    text-align: center;
                 }
                 @include mediumscreen{
                    left: -70%;
@@ -345,19 +354,19 @@ svg{
                     font-size: 17px;
                     font-weight: bold;
                     @include verysmallscreen{
-                        font-size: 8px;
+                        font-size: 14px;
                     }
                     @include mid-screen1{
                         font-size: 12px;
                     }
                     @include mobile{
-                        font-size: 10px;
+                        font-size: 14px;
                     }
                     @include midscreen{
                         font-size: 10px;
                     }
                     @include galaxyfold{
-                        font-size: 8px;
+                        font-size: 12px;
                     }
                     @include mediumscreen{
                         font-size: 12px;
@@ -380,6 +389,10 @@ svg{
                     }
                     @include midscreen{
                         padding: 1px 10px;
+                    }
+                    &:hover{
+                        background-color: transparent;
+                        color: $bg_yellow;
                     }
                     
                 }
@@ -412,6 +425,7 @@ svg{
     .arrow-div{
         @include verysmallscreen{
             margin: 10px auto;
+            margin-top: 120px;
             i{
                 font-size: 15px;
             }
@@ -430,6 +444,7 @@ svg{
         }
         @include mobile{
             margin: 10px auto;
+            margin-top: 120px;
             i{
                 font-size: 15px;
             }
@@ -439,6 +454,7 @@ svg{
         }
         @include galaxyfold{
             margin: 10px auto;
+            margin-top: 120px;
             i{
                 font-size: 15px;
             }
@@ -694,8 +710,59 @@ svg{
             width: 15%;
         }
     }
+
+    .container{
+        position: relative;
+    }
+
+    h2 {
+        color: #fff;
+        margin: 0;
+      }
+     h2:nth-child(1) {
+        color: transparent;
+        -webkit-text-stroke: 2px $bg_yellow;
+        position: absolute;
+      }
+      
+       h2:nth-child(2) {
+        color:$bg_yellow;
+        animation: animate 4s ease-in-out infinite;
+        
+      }
+      
+      @keyframes animate {
+        0%,
+        100% {
+          clip-path: polygon(
+            0% 45%,
+            16% 44%,
+            33% 50%,
+            54% 60%,
+            70% 61%,
+            84% 59%,
+            100% 52%,
+            100% 100%,
+            0% 100%
+          );
+        }
+      
+        50% {
+          clip-path: polygon(
+            0% 60%,
+            15% 65%,
+            34% 66%,
+            51% 62%,
+            67% 50%,
+            84% 45%,
+            100% 46%,
+            100% 100%,
+            0% 100%
+          );
+        }
+      
     
-    h2{
+    /*h2{
         text-align: center;
         color: $bg_yellow;
         margin: 0 0 60px 0;
@@ -715,7 +782,7 @@ svg{
             @include galaxyfold{
                 -webkit-text-stroke: 1px $bg_yellow;
             }
-        }
+        }*/
     }
     .grid-container{
         @include grid-mixin(2,0,100px);
@@ -776,6 +843,10 @@ svg{
             @include galaxyfold{
                 line-height: 2.6;
             }
+            &:hover{
+                background-color: $bg_yellow;
+                color: black;
+            }
             
         }
         .shop{
@@ -824,6 +895,15 @@ svg{
         }
         
     }
+
+    [data-aos="rotate-c"] {
+        transform: rotate(-180deg);
+        transition-property: transform;
+      }
+
+      [data-aos="rotate-c"].aos-animate {
+        transform: rotate(0deg);
+      }
     
     .body3-2{
         
@@ -968,6 +1048,9 @@ svg{
         @include grid-mixin(2,0,0);
         @include mobile{
             grid-template-columns: auto;
+            .w1,.w2,.w3,.w4{
+                @include overlay;
+            }
         }
         @include galaxyfold{
             grid-template-columns: auto;
@@ -993,6 +1076,7 @@ svg{
             bottom: 30px;
             left: 0;
             right: 0;
+            
             @include verysmallscreen{
                 width: 60%;
             }
@@ -1046,6 +1130,17 @@ svg{
                 font-weight: bold;
                 font-style: italic;
                 font-size: 16px;
+                background-image: linear-gradient(
+                        -225deg,
+                        #e5eca4 0%,
+                        #fff800 100%
+                    );
+
+                    background-size: 200% auto;
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    animation: textclip 2s linear infinite;
                
                 @include verysmallscreen{
                     font-size: 10px;
@@ -1063,6 +1158,13 @@ svg{
                     font-size: 14px;
                 }
             }
+
+            @keyframes textclip {
+                to {
+                  background-position: 200% center;
+                }
+              }
+
             a{
                 @include btn($bg_yellow,$bg_black);
                 padding: 5px 15px;
@@ -1163,6 +1265,10 @@ svg{
             margin-top: 20px;
             padding: 8px 20px;
             font-weight: bold;
+            &:hover{
+                background-color: $bg_yellow;
+                color: black
+            }
         }
     }
 }

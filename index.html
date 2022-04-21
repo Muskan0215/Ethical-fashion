@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="script.js"></script>
@@ -59,7 +61,7 @@
             
             <div class="content">
                 <div class="flower">
-                    <img src="./assignment-img/flower.png" class="flower-img">
+                    <img src="./assignment-img/flower.png" class="flower-img" data-aos="rotate-c">
                     <div class="text01">01</div>
                 </div>
                 <div class="image-wrapper">
@@ -67,14 +69,14 @@
                         <h2 class="solid">ethical</h2>
                         <h2 class="stroke">ethical</h2>
                     </div>
-                    <div class="image">
+                    <div class="image" data-aos="fade-down">
                         <img src="./assignment-img/elegant-female-model-sitting-armchair-jacket-suit-new-feminity-concept5.jpg"
                             alt="">
                     </div>
                     <div class="content1">
                         <p>Conscious style and design production that doesn't harm working conditions,the environment
                             and animals.</p>
-                        <a href="#shopnow">SHOP NOW</a>
+                        <a href="#shopnow" id="hovereffect">SHOP NOW</a>
                     </div>
                     <div class="fashion">
                         <h2 class="solid">fashion</h2>
@@ -95,7 +97,7 @@
             <img src="./assignment-img/brush.png" class="bg-image1">
             <div class="container">
                 <i class="lni lni-plus" id=faded></i> <i class="lni lni-plus"></i>
-                <div class="content2">
+                <div class="content2" data-aos="flip-up">
                     <h3>
                         a sustainable shopping experience.
                     </h3>
@@ -109,14 +111,15 @@
         </div>
 
         <div class="body3" id="body3">
-            <img src="./assignment-img/flower.png" class="f1">
-            <img src="./assignment-img/flower.png" class="f2">
+            <img src="./assignment-img/flower.png" class="f1" data-aos="rotate-c">
+            <img src="./assignment-img/flower.png" class="f2" data-aos="rotate-c">
             <div class="b3-radial"></div>
             <div class="b3-radial2"></div>
             <div class="container">
-                <h2><span> our</span> shop</h2>
+                <h2>our shop</h2>
+                <h2>our shop</h2>
                 <div class="grid-container">
-                    <div class="grid1">
+                    <div class="grid1" data-aos="fade-right">
                         <img
                             src="./assignment-img/elegant-female-model-sitting-armchair-jacket-suit-new-feminity-concept.jpg">
                         <div class="shop">
@@ -127,7 +130,7 @@
                             <a href="#added-to-cart">ADD TO CART</a>
                         </div>
                     </div>
-                    <div class="grid2">
+                    <div class="grid2" data-aos="fade-left">
                         <img
                             src="./assignment-img/elegant-female-model-sitting-armchair-jacket-suit-new-feminity-concept1.jpg">
                         <div class="shop">
@@ -138,7 +141,7 @@
                             <a href="#added-to-cart">ADD TO CART</a>
                         </div>
                     </div>
-                    <div class="grid3">
+                    <div class="grid3" data-aos="fade-right">
                         <img
                             src="./assignment-img/elegant-female-model-sitting-armchair-jacket-suit-new-feminity-concept2.jpg">
                         <div class="shop">
@@ -149,7 +152,7 @@
                             <a href="#added-to-cart">ADD TO CART</a>
                         </div>
                     </div>
-                    <div class="grid4">
+                    <div class="grid4" data-aos="fade-left">
                         <img
                             src="./assignment-img/elegant-female-model-sitting-armchair-jacket-suit-new-feminity-concept3.jpg">
                         <div class="shop">
@@ -170,7 +173,7 @@
                 <div class="body3-2" id="body3-2">
                     <h3><span> changing the world piece by piece</span></h3>
                     <div class="grid-container">
-                        <div class="box1">
+                        <div class="box1" data-aos="fade-right" data-aos-delay="200">
                             <p>
                                 "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, quod! Quam, modi
                                 labore! Corrupti architecto tenetur minus, exercitationem blanditiis voluptatem ipsum
@@ -178,7 +181,7 @@
                             </p>
                             <h4>-KRISTEN HAN</h4>
                         </div>
-                        <div class="box2">
+                        <div class="box2" data-aos="fade-left" data-aos-delay="800">
                             <p>
                                 "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, quod! Quam, modi
                                 labore! Corrupti architecto tenetur minus, exercitationem blanditiis voluptatem ipsum
@@ -186,7 +189,7 @@
                             </p>
                             <h4>-KRISTEN HAN</h4>
                         </div>
-                        <div class="box3">
+                        <div class="box3" data-aos="fade-right" data-aos-delay="1400">
                             <p>
                                 "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, quod! Quam, modi
                                 labore! Corrupti architecto tenetur minus, exercitationem blanditiis voluptatem ipsum
@@ -194,7 +197,7 @@
                             </p>
                             <h4>-KRISTEN HAN</h4>
                         </div>
-                        <div class="box4">
+                        <div class="box4" data-aos="fade-left" data-aos-delay="2000">
                             <p>
                                 "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, quod! Quam, modi
                                 labore! Corrupti architecto tenetur minus, exercitationem blanditiis voluptatem ipsum
@@ -212,36 +215,36 @@
             <div class="wrapper">
                 <div class="w1">
                     <img src="./assignment-img/Place-Your-Image-Here-(Double-Click-to-Edit).jpg">
-                    <div class="image-caption">
+                    <div class="image-caption" data-aos="fade-up-right">
                         <h4>CLASSICS</h4>
-                        <p>Conscious style and design production that doesn't harm working conditions,the environment
+                        <p id="grey-overlay">Conscious style and design production that doesn't harm working conditions,the environment
                             and animals.</p>
                         <a href="#shop-now">SHOP NOW</a>
                     </div>
                 </div>
                 <div class="w2">
                     <img src="./assignment-img/Place-Your-Image-Here-(Double-Click-to-Edit)1.jpg">
-                    <div class="image-caption">
+                    <div class="image-caption" data-aos="fade-up-left">
                         <h4>OUR FAVES</h4>
-                        <p>Conscious style and design production that doesn't harm working conditions,the environment
+                        <p id="grey-overlay">Conscious style and design production that doesn't harm working conditions,the environment
                             and animals.</p>
                         <a href="#shop-now">SHOP NOW</a>
                     </div>
                 </div>
                 <div class="w3">
                     <img src="./assignment-img/Place-Your-Image-Here-(Double-Click-to-Edit)2.jpg">
-                    <div class="image-caption">
+                    <div class="image-caption" data-aos="fade-up-right">
                         <h4>BESTSELLERS</h4>
-                        <p>Conscious style and design production that doesn't harm working conditions,the environment
+                        <p id="grey-overlay">Conscious style and design production that doesn't harm working conditions,the environment
                             and animals.</p>
                         <a href="#shop-now">SHOP NOW</a>
                     </div>
                 </div>
                 <div class="w4">
                     <img src="./assignment-img/Place-Your-Image-Here-(Double-Click-to-Edit)3.jpg">
-                    <div class="image-caption">
+                    <div class="image-caption" data-aos="fade-up-left">
                         <h4>MODERN</h4>
-                        <p>Conscious style and design production that doesn't harm working conditions,the environment
+                        <p id="grey-overlay">Conscious style and design production that doesn't harm working conditions,the environment
                             and animals.</p>
                         <a href="#shop-now">SHOP NOW</a>
                     </div>
@@ -292,7 +295,7 @@
             <div class="footer-radial"></div>
             <div class="container">
                 <div class="footer-grid">
-                    <div class="f1">
+                    <div class="f1" data-aos="fade-up">
                         <h4>OUR BRAND</h4>
                         <ul>
                             <li><a>New Designs</a></li>
@@ -301,7 +304,7 @@
                             <li><a>Stay in the loop</a></li>
                         </ul>
                     </div>
-                    <div class="f2">
+                    <div class="f2" data-aos="fade-down">
                         <h4>THE TEAM</h4>
                         <ul>
                             <li><a>Meet the team</a></li>
@@ -310,7 +313,7 @@
                             <li><a>Careers</a></li>
                         </ul>
                     </div>
-                    <div class="f3">
+                    <div class="f3" data-aos="fade-up">
                         <h4>FASHION</h4>
                         <ul>
                             <li><a>What we stand for</a></li>
@@ -319,7 +322,7 @@
                             <li><a>Slow Fashion</a></li>
                         </ul>
                     </div>
-                    <div class="f4">
+                    <div class="f4" data-aos="fade-down">
                         <h4>LEGAL</h4>
                         <ul>
                             <li><a>Terms & Conditions</a></li>

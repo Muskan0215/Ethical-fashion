@@ -266,7 +266,7 @@ svg {
 }
 
 .body1 .collapse .nav-collapse ul li {
-  padding: 25px;
+  padding: 20px;
 }
 
 @media screen and (min-width: 301px) and (max-width: 375px) {
@@ -424,7 +424,6 @@ svg {
   color: #D9F41B;
   position: absolute;
   left: -92%;
-  position: absolute;
   z-index: -1;
 }
 
@@ -513,8 +512,12 @@ svg {
 
 @media screen and (max-width: 300px) {
   .body1 .content .content1 {
-    left: -70%;
-    width: 75px;
+    width: 200%;
+    left: 50%;
+    top: 100%;
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+    text-align: center;
   }
 }
 
@@ -534,15 +537,23 @@ svg {
 
 @media screen and (min-width: 301px) and (max-width: 375px) {
   .body1 .content .content1 {
-    left: -100px;
-    width: 80%;
+    width: 200%;
+    left: 50%;
+    top: 100%;
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+    text-align: center;
   }
 }
 
 @media screen and (min-width: 376px) and (max-width: 480px) {
   .body1 .content .content1 {
-    width: 85%;
-    left: -85%;
+    width: 200%;
+    left: 50%;
+    top: 100%;
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+    text-align: center;
   }
 }
 
@@ -575,7 +586,7 @@ svg {
 
 @media screen and (min-width: 301px) and (max-width: 375px) {
   .body1 .content .content1 p {
-    font-size: 8px;
+    font-size: 14px;
   }
 }
 
@@ -587,7 +598,7 @@ svg {
 
 @media screen and (min-width: 376px) and (max-width: 480px) {
   .body1 .content .content1 p {
-    font-size: 10px;
+    font-size: 14px;
   }
 }
 
@@ -599,7 +610,7 @@ svg {
 
 @media screen and (max-width: 300px) {
   .body1 .content .content1 p {
-    font-size: 8px;
+    font-size: 12px;
   }
 }
 
@@ -684,6 +695,11 @@ svg {
   }
 }
 
+.body1 .content .content1 a:hover {
+  background-color: transparent;
+  color: #D9F41B;
+}
+
 .body1 .container {
   z-index: 0;
 }
@@ -727,6 +743,7 @@ svg {
 @media screen and (min-width: 301px) and (max-width: 375px) {
   .body1 .arrow-div {
     margin: 10px auto;
+    margin-top: 120px;
   }
   .body1 .arrow-div i {
     font-size: 15px;
@@ -757,6 +774,7 @@ svg {
 @media screen and (min-width: 376px) and (max-width: 480px) {
   .body1 .arrow-div {
     margin: 10px auto;
+    margin-top: 120px;
   }
   .body1 .arrow-div i {
     font-size: 15px;
@@ -769,6 +787,7 @@ svg {
 @media screen and (max-width: 300px) {
   .body1 .arrow-div {
     margin: 10px auto;
+    margin-top: 120px;
   }
   .body1 .arrow-div i {
     font-size: 15px;
@@ -1272,39 +1291,91 @@ svg {
   }
 }
 
+.body3 .container {
+  position: relative;
+}
+
 .body3 h2 {
-  text-align: center;
-  color: #D9F41B;
-  margin: 0 0 60px 0;
+  color: #fff;
+  margin: 0;
 }
 
-@media screen and (max-width: 300px) {
-  .body3 h2 {
-    margin: 0 0 20px 0;
-  }
-}
-
-.body3 h2 span {
+.body3 h2:nth-child(1) {
   color: transparent;
   -webkit-text-stroke: 2px #D9F41B;
+  position: absolute;
 }
 
-@media screen and (min-width: 301px) and (max-width: 375px) {
-  .body3 h2 span {
-    -webkit-text-stroke: 1px #D9F41B;
-  }
+.body3 h2:nth-child(2) {
+  color: #D9F41B;
+  -webkit-animation: animate 4s ease-in-out infinite;
+          animation: animate 4s ease-in-out infinite;
 }
 
-@media screen and (min-width: 376px) and (max-width: 480px) {
-  .body3 h2 span {
-    -webkit-text-stroke: 1px #D9F41B;
+@-webkit-keyframes animate {
+  0%,
+  100% {
+    -webkit-clip-path: polygon(0% 45%, 16% 44%, 33% 50%, 54% 60%, 70% 61%, 84% 59%, 100% 52%, 100% 100%, 0% 100%);
+            clip-path: polygon(0% 45%, 16% 44%, 33% 50%, 54% 60%, 70% 61%, 84% 59%, 100% 52%, 100% 100%, 0% 100%);
   }
+  50% {
+    -webkit-clip-path: polygon(0% 60%, 15% 65%, 34% 66%, 51% 62%, 67% 50%, 84% 45%, 100% 46%, 100% 100%, 0% 100%);
+            clip-path: polygon(0% 60%, 15% 65%, 34% 66%, 51% 62%, 67% 50%, 84% 45%, 100% 46%, 100% 100%, 0% 100%);
+  }
+  /*h2{
+        text-align: center;
+        color: $bg_yellow;
+        margin: 0 0 60px 0;
+        @include galaxyfold{
+            margin: 0 0 20px 0;
+        }
+       
+        span{
+            color: transparent;
+            -webkit-text-stroke: $text-outline;
+            @include verysmallscreen{
+                -webkit-text-stroke: 1px $bg_yellow;
+            }
+            @include mobile{
+                -webkit-text-stroke: 1px $bg_yellow;
+            }
+            @include galaxyfold{
+                -webkit-text-stroke: 1px $bg_yellow;
+            }
+        }*/
 }
 
-@media screen and (max-width: 300px) {
-  .body3 h2 span {
-    -webkit-text-stroke: 1px #D9F41B;
+@keyframes animate {
+  0%,
+  100% {
+    -webkit-clip-path: polygon(0% 45%, 16% 44%, 33% 50%, 54% 60%, 70% 61%, 84% 59%, 100% 52%, 100% 100%, 0% 100%);
+            clip-path: polygon(0% 45%, 16% 44%, 33% 50%, 54% 60%, 70% 61%, 84% 59%, 100% 52%, 100% 100%, 0% 100%);
   }
+  50% {
+    -webkit-clip-path: polygon(0% 60%, 15% 65%, 34% 66%, 51% 62%, 67% 50%, 84% 45%, 100% 46%, 100% 100%, 0% 100%);
+            clip-path: polygon(0% 60%, 15% 65%, 34% 66%, 51% 62%, 67% 50%, 84% 45%, 100% 46%, 100% 100%, 0% 100%);
+  }
+  /*h2{
+        text-align: center;
+        color: $bg_yellow;
+        margin: 0 0 60px 0;
+        @include galaxyfold{
+            margin: 0 0 20px 0;
+        }
+       
+        span{
+            color: transparent;
+            -webkit-text-stroke: $text-outline;
+            @include verysmallscreen{
+                -webkit-text-stroke: 1px $bg_yellow;
+            }
+            @include mobile{
+                -webkit-text-stroke: 1px $bg_yellow;
+            }
+            @include galaxyfold{
+                -webkit-text-stroke: 1px $bg_yellow;
+            }
+        }*/
 }
 
 .body3 .grid-container {
@@ -1458,6 +1529,11 @@ svg {
   }
 }
 
+.body3 .grid-container a:hover {
+  background-color: #D9F41B;
+  color: black;
+}
+
 .body3 .grid-container .shop {
   margin-top: 10px;
   display: -webkit-box;
@@ -1529,6 +1605,20 @@ svg {
 .body3 .grid-container .b3-text p {
   margin: 0;
   font-size: 16px;
+}
+
+.body3 [data-aos="rotate-c"] {
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+}
+
+.body3 [data-aos="rotate-c"].aos-animate {
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
 }
 
 .body3 .body3-2 h3 {
@@ -1828,6 +1918,15 @@ svg {
     -ms-grid-columns: auto;
         grid-template-columns: auto;
   }
+  .body4 .wrapper .w1::before, .body4 .wrapper .w2::before, .body4 .wrapper .w3::before, .body4 .wrapper .w4::before {
+    content: '';
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
 }
 
 @media screen and (max-width: 300px) {
@@ -1961,6 +2060,13 @@ svg {
   font-weight: bold;
   font-style: italic;
   font-size: 16px;
+  background-image: linear-gradient(-225deg, #e5eca4 0%, #fff800 100%);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: textclip 2s linear infinite;
+          animation: textclip 2s linear infinite;
 }
 
 @media screen and (min-width: 301px) and (max-width: 375px) {
@@ -1990,6 +2096,18 @@ svg {
 @media screen and (min-width: 631px) and (max-width: 768px) {
   .body4 .wrapper .image-caption p {
     font-size: 14px;
+  }
+}
+
+@-webkit-keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
   }
 }
 
@@ -2241,6 +2359,11 @@ svg {
     padding: 2px 10px;
     font-size: 12px;
   }
+}
+
+.body4 .designer a:hover {
+  background-color: #D9F41B;
+  color: black;
 }
 
 .body5 {
