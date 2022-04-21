@@ -416,6 +416,16 @@ svg {
   height: 100%;
 }
 
+.body1 .content .image::before {
+  content: '';
+  background-color: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
 .body1 .content .ethical h2 {
   top: 50%;
   -webkit-transform: translateY(-50%);
